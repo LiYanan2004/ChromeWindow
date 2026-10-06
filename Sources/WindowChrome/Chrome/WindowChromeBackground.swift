@@ -3,6 +3,7 @@ import SwiftUI
 struct WindowChromeBackground: View {
     let geometry: WindowChromeGeometry
     let model: WindowChromeModel
+    let titlebarPreference: _PreferenceValue<WindowTitlebarPreferenceKey>
     @State private var hoverRegion = WindowHoverRegion.none
 
     var body: some View {
@@ -21,7 +22,9 @@ struct WindowChromeBackground: View {
                 .padding(.top, geometry.titlebarHeight)
                 .opacity(model.isPresented ? 1 : 0)
 
-            WindowControlsView()
+            titlebarPreference._force { toolbarContent in
+                WindowControlsView(toolbarContent: toolbarContent)
+            }
                 .frame(height: geometry.titlebarHeight)
                 .offset(y: model.isPresented ? 0 : geometry.titlebarHeight)
                 .transaction(value: model.isPresented) { transaction in

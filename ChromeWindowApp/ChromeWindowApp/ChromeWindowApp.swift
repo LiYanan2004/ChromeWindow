@@ -19,6 +19,13 @@ struct WindowChromeDemoApp: App {
         ChromeWindow(id: "chrome-window") {
             ContentView()
                 .frame(width: 338, height: 734)
+                .chromeWindowToolbar {
+                    ForEach(1..<3) { i in
+                        Button("\(i)", systemImage: "\(i).circle") {
+                            print("\(i) clicked.")
+                        }
+                    }
+                }
         }
         .defaultLaunchBehavior(.suppressed)
     }

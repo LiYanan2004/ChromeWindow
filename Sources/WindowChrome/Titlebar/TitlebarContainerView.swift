@@ -5,11 +5,11 @@ import SwiftUI
 @MainActor
 final class TitlebarContainerView: NSView {
     private var observations: [NSKeyValueObservation] = []
-    private let toolbarItemHost = NSHostingView(rootView: EmptyView())
+    private let toolbarItemHost = WindowToolbarHostingView(rootView: WindowToolbarItems())
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        // sub_31f28: the empty demo toolbar uses the same hosting configuration.
+        // sub_31f28: preserve the original hosting configuration and system styles.
         toolbarItemHost.sizingOptions = []
         let selector = NSSelectorFromString("_setSemanticContext:")
         if toolbarItemHost.responds(to: selector),
@@ -25,6 +25,10 @@ final class TitlebarContainerView: NSView {
             toolbarItemHost.topAnchor.constraint(equalTo: topAnchor),
             toolbarItemHost.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+
+    func updateToolbarContent(_ content: AnyView?) {
+        toolbarItemHost.rootView = WindowToolbarItems(content: content)
     }
 
     @available(*, unavailable)
