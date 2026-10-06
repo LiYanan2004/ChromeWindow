@@ -1,0 +1,56 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.3.3.2 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-macos26.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -enable-experimental-feature Macros -enable-experimental-feature ExtensionMacros -enable-experimental-feature IsolatedAny2 -enable-upcoming-feature InferSendableFromCaptures -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -user-module-version 7.2.5.1.401 -module-name SwiftUI_WindowPrivate -module-abi-name SwiftUI -package-name SwiftUI
+// swift-module-flags-ignorable: -public-module-name SwiftUI -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import Combine
+import CoreData
+import CoreFoundation
+@_exported import CoreGraphics
+@_exported import CoreTransferable
+@_exported import DeveloperToolsSupport
+import Foundation
+import OSLog
+import Observation
+import Spatial
+import Swift
+@_exported import SwiftUI
+@_exported import SwiftUICore
+import Symbols
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import os.log
+import os
+
+@available(macOS 15.0, *)
+public struct WindowContentShapeSizingBehavior {
+    public static var none: SwiftUI_WindowPrivate.WindowContentShapeSizingBehavior { get }
+    public static func bounds(anchor: SwiftUI.UnitPoint) -> SwiftUI_WindowPrivate.WindowContentShapeSizingBehavior
+    public static func rect(size: CoreFoundation.CGSize, anchor: SwiftUI.UnitPoint) -> SwiftUI_WindowPrivate.WindowContentShapeSizingBehavior
+}
+
+@available(macOS 15.0, *)
+extension SwiftUI.View {
+    public func windowContentShape<WindowShape>(_ shape: WindowShape, sizingBehavior: SwiftUI_WindowPrivate.WindowContentShapeSizingBehavior) -> some SwiftUI.View where WindowShape: SwiftUI.Shape
+}
+
+@available(macOS 15.0, *)
+extension SwiftUI.Scene {
+    public func windowInsets(_ insets: SwiftUI.EdgeInsets) -> some SwiftUI.Scene
+}
+
+@available(macOS 15.0, *)
+extension SwiftUI.ShadowStyle {
+    @_silgen_name("$s7SwiftUI11ShadowStyleV11ignoresFillyACSbF")
+    public func ignoresFill(_ ignoresFill: Swift.Bool) -> SwiftUI.ShadowStyle
+}
+
+@available(macOS 15.0, *)
+extension SwiftUI.EnvironmentValues {
+    @_alwaysEmitIntoClient
+    public var isWindowSharingIndicatorVisible: Swift.Bool {
+        @_silgen_name("$s7SwiftUI17EnvironmentValuesV31isWindowSharingIndicatorVisibleSbvg")
+        get
+    }
+}
