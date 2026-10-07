@@ -17,17 +17,14 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SwiftUI_WindowPrivate",
-            path: "Sources/DarwinPrivateFrameworkOverlay/SwiftUI_WindowPrivate.xcframework"
+            path: "Sources/DarwinPrivateOverlay/SwiftUI_WindowPrivate.xcframework"
         ),
         .target(
             name: "ChromeWindow",
             dependencies: [
                 "SwiftUI_WindowPrivate",
             ],
-            path: "Sources/WindowChrome",
-            linkerSettings: [
-//                .
-            ]
+            path: "Sources/WindowChrome"
         ),
     ]
 )

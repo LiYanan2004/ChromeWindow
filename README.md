@@ -15,8 +15,6 @@ It recreates the rounded window outline and shadow, the frame and titlebar that 
 
 ## Getting Started
 
-## Usage
-
 ### Create a Window
 
 Declare a `ChromeWindow` scene in your app's `body`. Give it a unique identifier and provide your SwiftUI content:
@@ -58,9 +56,3 @@ ContentView()
         }
     }
 ```
-
-## Sample App
-
-Open [ChromeWindowApp.xcodeproj](ChromeWindowApp/ChromeWindowApp.xcodeproj) in Xcode, select the `ChromeWindowApp` scheme, and run it on macOS 15.7 or later.
-
-Click **Open Chrome Window** to display the example. Hover near its top edge to reveal the titlebar and two sample toolbar buttons. Each button prints a message to the console.

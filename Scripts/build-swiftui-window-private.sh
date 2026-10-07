@@ -26,7 +26,7 @@ fi
 
 script_directory="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 framework_name="SwiftUI_WindowPrivate"
-xcframework_directory="${1:-$script_directory/../Sources/DarwinPrivateFrameworkOverlay/$framework_name.xcframework}"
+xcframework_directory="${1:-$script_directory/../Sources/DarwinPrivateOverlay/$framework_name.xcframework}"
 metadata_path="$xcframework_directory/Info.plist"
 deployment_target="${MACOSX_DEPLOYMENT_TARGET:-15.0}"
 
